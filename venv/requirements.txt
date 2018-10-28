@@ -1,4 +1,4 @@
-json
+pyTelegramBotAPI
 requests
 telebot
 random
