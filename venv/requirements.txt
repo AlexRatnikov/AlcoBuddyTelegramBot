@@ -1,6 +1,5 @@
 pyTelegramBotAPI
-requests
-telebot
-random
 telepot
+telebot
+requests
 pprint
