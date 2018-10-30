@@ -3,6 +3,7 @@ import requests
 import telebot
 import random
 import telepot
+import os
 from telebot.types import Message
 from pprint import pprint
 
@@ -29,6 +30,8 @@ r = requests.post(URL + 'sendLocation', payload)
 
 bot = telebot.TeleBot(TOKEN)
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+print(ROOT_DIR)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
@@ -41,7 +44,7 @@ def send_welcome(message):
 @bot.message_handler(func=lambda message: True)
 def upper(message: Message):
     bot.reply_to(message, random.choice(smiles))
-    sti = open('/Users/alexanderratnikov/Programming/Python/PycharmProjects/GeekBrainsTelegramBot/venv/Porto.webp', 'rb')
+    sti = open(ROOT_DIR + '/Porto.webp', 'rb')
     bot.send_sticker(message.chat.id, sti)
 
     print(TelegramBot.getMe())
