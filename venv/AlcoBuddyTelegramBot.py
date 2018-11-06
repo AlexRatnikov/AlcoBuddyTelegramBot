@@ -46,8 +46,8 @@ def upper(message: Message):
     bot.reply_to(message, random.choice(smiles))
     sti = open(ROOT_DIR + '/Porto.webp', 'rb')
     bot.send_sticker(message.chat.id, sti)
-
     print(TelegramBot.getMe())
     print(TelegramBot.getUpdates())
+
 
 bot.polling()
