@@ -43,6 +43,8 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def upper(message: Message):
+    if message.text == "Hi":
+        bot.reply_to(message, "Hi yourself!")
     bot.reply_to(message, random.choice(smiles))
     sti = open(ROOT_DIR + '/Porto.webp', 'rb')
     bot.send_sticker(message.chat.id, sti)
